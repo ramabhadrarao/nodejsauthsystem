@@ -1,0 +1,28 @@
+CREATE DATABASE online_editor;
+CREATE USER 'online_editor'@'localhost' IDENTIFIED BY '#Rama#2024???#@';
+GRANT ALL PRIVILEGES ON online_editor.* TO 'online_editor'@'localhost';
+
+
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  role ENUM('student', 'faculty', 'admin') NOT NULL
+);
+
+
+CREATE DATABASE online_editor;
+CREATE USER 'online_editor'@'localhost' IDENTIFIED BY '#Rama#2024???#@';
+GRANT ALL PRIVILEGES ON online_editor.* TO 'online_editor'@'localhost';
+
+-- Insert default admin user  password123
+INSERT INTO users (username, password, role)
+VALUES ('admin', '$2a$10$7ow8uG0ICGS4eOXbQP2ibuHJD7DF.ULkMpohrt7onjgS3Pt5LFzjO', 'admin');
+
+-- Insert default faculty user  password123
+INSERT INTO users (username, password, role)
+VALUES ('faculty', '$2a$10$7ow8uG0ICGS4eOXbQP2ibuHJD7DF.ULkMpohrt7onjgS3Pt5LFzjO', 'faculty');
+
+-- Insert default student user password123
+INSERT INTO users (username, password, role)
+VALUES ('student', '$2a$10$7ow8uG0ICGS4eOXbQP2ibuHJD7DF.ULkMpohrt7onjgS3Pt5LFzjO', 'student');
